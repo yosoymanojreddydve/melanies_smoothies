@@ -32,6 +32,11 @@ dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NA
 #multi select widget
 INGREDIENTS_LIST = st.multiselect('Choose upto 5 ingredients:',dataframe,max_selections = 5)
 
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+# st.text(smoothiefroot_response)
+sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+
 #to print or write the select values only whne a option is selected
 if INGREDIENTS_LIST:
     ingredients_string = ''
