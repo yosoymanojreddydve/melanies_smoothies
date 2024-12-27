@@ -24,7 +24,7 @@ st.write("The Name on your smoothie will be:", name_on_order)
 # option = st.selectbox("what is your favourite fruit?",("Banana","Strawbeery","Peaches"))
 # st.write("your favourite fruit is :", option)
 
-session = get_active_session()
+# session = get_active_session()
 dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 # st.dataframe(data= dataframe, use_container_width=False, )
 
